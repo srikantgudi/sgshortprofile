@@ -19,50 +19,8 @@
       .subtitle {
         font-size: 16px;
       }
-      .info {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-      }
     </style>
   </head>
   <body>
-    <main>
-      <div class="info">
-        <div>
-          <h1>SRIKANT GUDI <span class="subtitle">(Short Resume)</span></h1>
-          <h3>
-            {resume['info'].pos}
-          </h3>
-        </div>
-        <div>
-          <p>{resume['info'].loc}</p>
-          <p>{resume['info'].email}</p>
-          <p>{resume['info'].phone}</p>
-        </div>
-      </div>
-      <details>
-        <summary class="main">{resume['profile'].name}</summary>
-        <ul>
-          {#each resume['profile'].contents as content}
-            <li>{content}</li>
-          {/each}
-        </ul>
-      </details>
-      <details>
-        <summary class="main">{resume['skills'].name}</summary>
-        <ul>
-          {#each resume['skills'].groups as group}
-            <details class="section">
-              <summary on:click={() => currentGroup = group.name} class:active={currentGroup === group.name}>{group.name}</summary>
-              <ul>
-                {#each group.values as groupVal}
-                <li>{groupVal}</li>
-                {/each}
-              </ul>
-            </details>
-          {/each}
-        </ul>
-      </details>
-    </main>
   </body>
 </html>

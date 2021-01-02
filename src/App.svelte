@@ -48,15 +48,25 @@
 	.subtitle {
 		font-size: 16px;
 	}
+	.info {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+	}
 </style>
 <main>
-		<h1>SRIKANT GUDI <span class="subtitle">(Short Resume)</span></h1>
-	<h3>
-		{resume['info'].pos}
-	</h3>
-	<p>
-		{resume['info'].loc} | {resume['info'].email} | {resume['info'].phone}	
-	</p>
+	<div class="info">
+		<div>
+			<h1>SRIKANT GUDI <span class="subtitle">(Short Resume)</span></h1>
+			<h3>
+				{resume['info'].pos}
+			</h3>
+		</div>
+		<div>
+			<p>{resume['info'].loc}</p>
+			<p>{resume['info'].email}</p>
+			<p>{resume['info'].phone}</p>
+		</div>
+	</div>
 
 	<details>
 		<summary class="main">{resume['info'].name}</summary>
@@ -65,7 +75,7 @@
 				{resume['info'].pos.toUpperCase()}
 			</p>
 			<p>
-				Location: 
+				Location:
 			</p>
 			<p>
 				eMail: <b>{resume['info'].email}</b>
